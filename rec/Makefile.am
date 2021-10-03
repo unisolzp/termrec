@@ -1,6 +1,6 @@
 bin_PROGRAMS += termrec
 
-termrec_SOURCES = rec/termrec.c rec/pty.c rec/pty.h
+termrec_SOURCES = sqlite/sqlite.c rec/termrec.c rec/pty.c rec/pty.h
 termrec_LDADD = libutils.la libcommon.la libtty.la
 
 if WIN32
