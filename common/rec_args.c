@@ -28,6 +28,7 @@ static struct option rec_opts[]={
 {"format",      1, 0, 'f'},
 {"exec",        1, 0, 'e'},
 {"raw",         0, 0, 'r'},
+{"sql",.        1, 0, 's'},
 {"append",      0, 0, 'a'},
 {"help",        0, 0, 'h'},
 {0,             0, 0, 0},
@@ -39,6 +40,7 @@ static const char *comp_ext;
 void get_rec_parms(int argc, char **argv)
 {
     format=0;
+    sql=0;
     command=0;
     record_name=0;
     raw=0;
@@ -71,6 +73,9 @@ void get_rec_parms(int argc, char **argv)
         case 'f':
             get_w_format(&format);
             break;
+        case 's':
+            sql=1;
+            break;
         case 'e':
             if (command)
                 die(_("You can specify -e only once.\n"));
@@ -87,6 +92,7 @@ void get_rec_parms(int argc, char **argv)
                 "%stermrec [-f format] [-e command] [file]\n"
                 "    %s"
                 "-f, --format X        %s\n"
+                "-s, --sql             %s\n"
                 "-e, --exec X          %s\n"
                 "-r, --raw             %s\n"
                 "-a, --append          %s\n"
