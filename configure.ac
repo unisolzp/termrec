@@ -35,7 +35,7 @@ AC_HEADER_STDC
 #AC_HEADER_TIOCGWINSZ
 AX_CREATE_STDINT_H
 AC_HEADER_TIME
-AC_CHECK_HEADERS([fcntl.h stdlib.h string.h strings.h sys/ioctl.h termios.h \
+AC_CHECK_HEADERS([fcntl.h sqlite3.h stdlib.h string.h strings.h sys/ioctl.h termios.h \
         unistd.h bzlib.h zlib.h sys/time.h sys/select.h langinfo.h \
         netinet/in.h lzma.h pty.h libutil.h zstd.h])
 AC_CHECK_HEADERS([arpa/inet.h netdb.h sys/socket.h])
